@@ -12,8 +12,8 @@ Controller <br>
     MousePosition()<br>
     MouseClick()<br>
     KeyClick()<br>
-}
+}<br>
 View<br>
-{
+{<br>
     Drawer()<br>
 }
