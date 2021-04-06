@@ -1,19 +1,19 @@
-<br>GameModel</br>
-{
-    <br>Width</br>
-    <br>Hight</br>
-    <br>Сonstructor()</br>
-    <br>StateChange (принимает информацию о нажатии пользователя на цель.</br>
-    <br>Если да, то вызывает отрисовку)</br>
-    <br>Score()</br>
+GameModel<br>
+{<br>
+    Width<br>
+    Hight<br>
+    Сonstructor()<br>
+    StateChange (принимает информацию о нажатии пользователя на цель.<br>
+    Если да, то вызывает отрисовку)<br>
+    Score()<br>
+}<br>
+Controller <br>
+{<br>
+    MousePosition()<br>
+    MouseClick()<br>
+    KeyClick()<br>
 }
-<br>Controller </br>
+View<br>
 {
-    <br>MousePosition()</br>
-    <br>MouseClick()</br>
-    <br>KeyClick()</br>
-}
-<br>View</br>
-{
-    <br>Drawer()</br>
+    Drawer()<br>
 }
