@@ -3,10 +3,8 @@ GameModel<br>
     Width<br>
     Hight<br>
     Сonstructor()<br>
-    StateChange (принимает информацию о нажатии пользователя на цель.<br>
-    Если да, то вызывает отрисовку)<br>
+    ClickTargetAndBackCenterButton<br>
     Score()<br>
-    CenterButton()<br>
 }<br>
 Controller <br>
 {<br>
