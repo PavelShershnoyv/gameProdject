@@ -6,6 +6,7 @@ GameModel<br>
     StateChange (принимает информацию о нажатии пользователя на цель.<br>
     Если да, то вызывает отрисовку)<br>
     Score()<br>
+    CenterButton()<br>
 }<br>
 Controller <br>
 {<br>
@@ -16,4 +17,5 @@ Controller <br>
 View<br>
 {<br>
     Drawer()<br>
+    ChangeTargetPosition()<br>
 }
