@@ -3,7 +3,7 @@ GameModel<br>
     Width<br>
     Hight<br>
     Сonstructor()<br>
-    ClickTargetAndBackCenterButton<br>
+    ClickTargetAndBackCenterButton()<br>
     Score()<br>
 }<br>
 Controller <br>
