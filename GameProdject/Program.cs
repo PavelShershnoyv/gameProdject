@@ -14,10 +14,9 @@ namespace GameProdject
         [STAThread]
         static void Main()
         {
-            var game = new GameModel(800, 500);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1(game));
+            Application.Run(new Form1());
         }
     }
 }

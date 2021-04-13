@@ -10,50 +10,27 @@ using System.Windows.Forms;
 
 namespace GameProdject
 {
-    public class GameModel
-    {
-        private int Width;
-        private int Height;
-        private Bitmap TargetBall = new Bitmap(Resource1.Target);
-        private int coordinateX = 0;
-        private int coordinateY = 0;
 
-        public GameModel(int width, int height)
-        {
-            Width = width;
-            Height = height;
-        }
-    }
-
-    public class Cards
-    {
-        Point location = Point.Empty;
-    }
 
     public partial class Form1 : Form
     {
-        private GameModel game;
+        private Bitmap TargetBall = new Bitmap(Resource1.Target);
+        CenterButton center;
+        TargetBall ball;
 
-
-        public Form1(GameModel game)
+        public Form1()
         {
-            this.game = game;
-            //TargetBall = new PictureBox();
-            //TargetBall.Image = new Bitmap(Resource1.Target);// как иначе?  Я пробовал 
-            //TargetBall.BackColor = Color.Black;
             InitializeComponent();
-            //GenerateTargetBalls();
+            Init();
+            Invalidate();
 		}
 
-        public void GenerateTargetBalls()
+        public void Init()
         {
-            var rnd = new Random();
-            var coordinateX = rnd.Next(0, ClientSize.Width); // Отвечай 
-            var coordinateY = rnd.Next(0, ClientSize.Height);
-
-            //TargetBall.Location = new Point(coordinateX, coordinateY);
-            //this.Controls.Add(TargetBall);
+            center = new CenterButton(ClientSize.Width / 2 - 25, ClientSize.Height / 2 - 25);
+            ball = new TargetBall(10, 10, 10);
         }
+
 
         protected override void OnMouseClick(MouseEventArgs e)
         {
@@ -69,22 +46,15 @@ namespace GameProdject
                 //coordinateY = rnd.Next(0, ClientSize.Height);
                 
             }
-                 
-
-
-
         }
 
 
         protected override void OnPaint(PaintEventArgs e)
         {
             Graphics graphics = e.Graphics;
-            var rectEllipse = new Rectangle(ClientSize.Width / 2 - 50, ClientSize.Height / 2 - 50, 100, 100);
 
-            graphics.DrawEllipse(new Pen(Color.Black, 5), rectEllipse);
-            graphics.FillEllipse(Brushes.Red, rectEllipse);
-
-            //graphics.DrawImage(TargetBall, new Rectangle(coordinateX, coordinateY, 100, 100));
+            graphics.DrawImage(center.buttonImg, center.x, center.y, center.size, center.size);
+            graphics.DrawImage(ball.targetImg, ball.x, ball.y, ball.size, ball.size);
 
         }
     }
