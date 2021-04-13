@@ -1,19 +1,10 @@
-GameModel<br>
-{<br>
-    Width<br>
-    Hight<br>
-    Сonstructor()<br>
-    ClickTargetAndBackCenterButton()<br>
-    Score()<br>
-}<br>
-Controller <br>
-{<br>
-    MousePosition()<br>
-    MouseClick()<br>
-    KeyClick()<br>
-}<br>
-View<br>
-{<br>
-    Drawer()<br>
-    ChangeTargetPosition()<br>
-}
+Сущности: 
+<br>1) Карточки (координаты, размеры, состояние карточки)
+<br>2) Центральная кнопка (координаты, размеры, состояние(нажата, наведена))
+<br>3) Уровни (координаты, массив карточек, метод перемешать)
+<br>4) Целевая область(координаты, состояние)
+
+
+
+
+
