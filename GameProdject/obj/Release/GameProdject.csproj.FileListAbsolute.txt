@@ -1,0 +1,9 @@
+C:\Users\ПАВЕЛ\Desktop\prodject VS\GameProdject\GameProdject\bin\Release\GameProdject.exe.config
+C:\Users\ПАВЕЛ\Desktop\prodject VS\GameProdject\GameProdject\bin\Release\GameProdject.exe
+C:\Users\ПАВЕЛ\Desktop\prodject VS\GameProdject\GameProdject\bin\Release\GameProdject.pdb
+C:\Users\ПАВЕЛ\Desktop\prodject VS\GameProdject\GameProdject\obj\Release\GameProdject.csprojAssemblyReference.cache
+C:\Users\ПАВЕЛ\Desktop\prodject VS\GameProdject\GameProdject\obj\Release\GameProdject.Properties.Resources.resources
+C:\Users\ПАВЕЛ\Desktop\prodject VS\GameProdject\GameProdject\obj\Release\GameProdject.csproj.GenerateResource.cache
+C:\Users\ПАВЕЛ\Desktop\prodject VS\GameProdject\GameProdject\obj\Release\GameProdject.csproj.CoreCompileInputs.cache
+C:\Users\ПАВЕЛ\Desktop\prodject VS\GameProdject\GameProdject\obj\Release\GameProdject.exe
+C:\Users\ПАВЕЛ\Desktop\prodject VS\GameProdject\GameProdject\obj\Release\GameProdject.pdb

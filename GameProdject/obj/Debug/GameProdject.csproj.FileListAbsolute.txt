@@ -1,0 +1,11 @@
+C:\Users\ПАВЕЛ\Desktop\prodject VS\GameProdject\GameProdject\bin\Debug\GameProdject.exe.config
+C:\Users\ПАВЕЛ\Desktop\prodject VS\GameProdject\GameProdject\bin\Debug\GameProdject.exe
+C:\Users\ПАВЕЛ\Desktop\prodject VS\GameProdject\GameProdject\bin\Debug\GameProdject.pdb
+C:\Users\ПАВЕЛ\Desktop\prodject VS\GameProdject\GameProdject\obj\Debug\GameProdject.csprojAssemblyReference.cache
+C:\Users\ПАВЕЛ\Desktop\prodject VS\GameProdject\GameProdject\obj\Debug\GameProdject.Properties.Resources.resources
+C:\Users\ПАВЕЛ\Desktop\prodject VS\GameProdject\GameProdject\obj\Debug\GameProdject.csproj.GenerateResource.cache
+C:\Users\ПАВЕЛ\Desktop\prodject VS\GameProdject\GameProdject\obj\Debug\GameProdject.csproj.CoreCompileInputs.cache
+C:\Users\ПАВЕЛ\Desktop\prodject VS\GameProdject\GameProdject\obj\Debug\GameProdject.exe
+C:\Users\ПАВЕЛ\Desktop\prodject VS\GameProdject\GameProdject\obj\Debug\GameProdject.pdb
+C:\Users\ПАВЕЛ\Desktop\prodject VS\GameProdject\GameProdject\obj\Debug\GameProdject.Resource1.resources
+C:\Users\ПАВЕЛ\Desktop\prodject VS\GameProdject\GameProdject\obj\Debug\GameProdject.GameModel.resources
