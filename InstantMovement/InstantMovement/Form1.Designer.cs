@@ -29,7 +29,6 @@ namespace GameProdject
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
             // 
             // Form1
             // 
@@ -41,10 +40,12 @@ namespace GameProdject
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
     }
 }
 

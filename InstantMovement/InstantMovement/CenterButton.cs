@@ -13,12 +13,14 @@ namespace GameProdject
         public int y;
         public Bitmap buttonImg;
         public int size;
+        public bool state;
 
         public CenterButton(int x, int y)
         {
             this.x = x;
             this.y = y;
             size = 50;
+            state = false;
             buttonImg = new Bitmap(Resource1.Target); // другая картинка будет 
         }
     }

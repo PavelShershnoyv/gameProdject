@@ -12,6 +12,7 @@ namespace GameProdject
         public int x;
         public int y;
         public int size;
+        public bool state;
         public Bitmap targetImg;
 
         public TargetBall(int x, int y, int size)
@@ -19,6 +20,7 @@ namespace GameProdject
             this.x = x;
             this.y = y;
             this.size = size;
+            state = true;
             targetImg = new Bitmap(Resource1.Target); // другая картинка будет 
         }
 
