@@ -77,5 +77,13 @@ namespace InstantMovement
                 graphics.DrawImage(ball.TargetImg, ball.X, ball.Y, ball.Size, ball.Size);
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Hide();
+            var form = new Form1();
+            form.ShowDialog();
+            Close();
+        }
     }
 }
