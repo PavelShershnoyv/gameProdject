@@ -28,8 +28,8 @@ namespace InstantMovement
 
         public void Init()
         {
-            center = new CenterButton(ClientSize.Width / 2 - 25, ClientSize.Height / 2 - 25);
-            ball = new TargetBall(10, 10, 20);
+            center = new CenterButton(ClientSize.Width / 2 - 25, ClientSize.Height / 2 - 25, true);
+            ball = new TargetBall(10, 10, 20, false);
             score = new Score();
         }
 
@@ -43,10 +43,10 @@ namespace InstantMovement
 
             if (e.Button == MouseButtons.Left && e.X >= leftBorderCenter.X
                 && e.X <= rightBorderCenter.X && e.Y >= leftBorderCenter.Y
-                && e.Y <= rightBorderCenter.Y && ball.State)
+                && e.Y <= rightBorderCenter.Y && !ball.State)
             {
-                ball.State = false;
-                center.State = true;
+                ball.State = true;
+                center.State = false;
                 var rnd = new Random();
                 ball.Size = rnd.Next(15, 40);
                 ball.X = rnd.Next(0, ClientSize.Width - ball.Size);
@@ -58,9 +58,10 @@ namespace InstantMovement
                 && e.X <= rightBorderBall.X && e.Y >= leftBorderBall.Y
                 && e.Y <= rightBorderBall.Y)
             {
-                ball.State = true;
-                center.State = false;
+                ball.State = false;
+                center.State = true;
                 score.Counter += 1;
+
                 Invalidate();
             }
 
@@ -70,11 +71,15 @@ namespace InstantMovement
         protected override void OnPaint(PaintEventArgs e)
         {
             Graphics graphics = e.Graphics;
-            //graphics.DrawString(score.Lable.Text, new Font("Arial", 16),
-            // new SolidBrush(Color.Black), score.position.X, score.position.Y);
-            graphics.DrawImage(center.ButtonImg, center.X, center.Y, center.Size, center.Size);
-            if (center.State)
-                graphics.DrawImage(ball.TargetImg, ball.X, ball.Y, ball.Size, ball.Size);
+
+            if (score.Counter < 1 && center.State != false)
+                graphics.DrawImage(center.StartButtonImg, center.X, center.Y, center.Size, center.Size);
+            else
+                graphics.DrawImage(center.ButtonImg, center.X, center.Y, center.Size, center.Size);
+            // Если реализовываю через SwitchButton то моргает экран 
+
+            if (ball.State)
+                graphics.DrawImage(ball.NewColorTargetBall(), ball.X, ball.Y, ball.Size, ball.Size);
 
         }
 

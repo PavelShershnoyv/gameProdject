@@ -1,28 +1,40 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace InstantMovement.Models
 {
-    public class TargetBall
+    public class TargetBall : GameObject
     {
-        public int X { get; set; }
-        public int Y { get; set; }
-        public int Size { get; set; }
-        public bool State { get; set; }
         public Bitmap TargetImg { get; private set; }
 
-        public TargetBall(int x, int y, int size)
+        public TargetBall(int x, int y, int size, bool state)
         {
-            this.X = x;
-            this.Y = y;
-            this.Size = size;
-            State = true;
-            TargetImg = new Bitmap(Properties.Resources.Target); // другая картинка будет 
+            X = x;
+            Y = y;
+            Size = size;
+            State = state;
+            TargetImg = new Bitmap(Properties.Resources.target1);
         }
 
+        public Bitmap NewColorTargetBall()
+        {
+            var rnd = new Random();
+            switch (rnd.Next(0, 7))
+            {
+                case 1:
+                    return new Bitmap(Properties.Resources.target1);
+                case 2:
+                    return new Bitmap(Properties.Resources.target2);
+                case 3:
+                    return new Bitmap(Properties.Resources.target3);
+                case 4:
+                    return new Bitmap(Properties.Resources.target4);
+                case 5:
+                    return new Bitmap(Properties.Resources.target5);
+                case 6:
+                    return new Bitmap(Properties.Resources.target6);
+            }
+            return new Bitmap(Properties.Resources.target1);
+        }
     }
 }

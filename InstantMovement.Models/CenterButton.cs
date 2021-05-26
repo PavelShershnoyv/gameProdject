@@ -7,21 +7,27 @@ using System.Threading.Tasks;
 
 namespace InstantMovement.Models
 {
-    public class CenterButton
+    public class CenterButton : GameObject
     {
-        public int X { get; set; }
-        public int Y { get; set; }
         public Bitmap ButtonImg { get; private set; }
-        public int Size { get; private set; }
-        public bool State { get; set; }
+        public Bitmap StartButtonImg { get; private set; }
 
-        public CenterButton(int x, int y)
+        public CenterButton(int x, int y, bool state)
         {
-            this.X = x;
-            this.Y = y;
+            X = x;
+            Y = y;
             Size = 50;
-            State = false;
-            ButtonImg = new Bitmap(Properties.Resources.Target); // другая картинка будет 
+            State = state;
+            StartButtonImg = new Bitmap(Properties.Resources.Start);
+            ButtonImg = new Bitmap(Properties.Resources.Center_button);
+        }
+
+        public Bitmap SwitchButton(Score score, CenterButton center)
+        {
+            if (score.Counter < 1 && center.State != false)
+                return new Bitmap(Properties.Resources.Start);
+            else
+                return new Bitmap(Properties.Resources.Center_button);
         }
     }
 }

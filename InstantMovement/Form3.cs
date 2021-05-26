@@ -18,7 +18,9 @@ namespace InstantMovement
         private readonly int[] allCards;
         private readonly int[] opened;
         private int counterOpenedCards;
-        private readonly PictureBox[] pictureBoxes;
+        private readonly PictureBox[,] pictureBoxes;
+        private readonly int row; // строка
+        private readonly int column; // столбец
 
         public Form3()
         {
@@ -27,190 +29,54 @@ namespace InstantMovement
             allCards = new int[24];
             counterOpenedCards = 0;
             opened = new int[2];
-            pictureBoxes = new PictureBox[24];
-            pictureBoxes[0] = pictureBox1;
-            pictureBoxes[1] = pictureBox2;
-            pictureBoxes[2] = pictureBox3;
-            pictureBoxes[3] = pictureBox4;
-            pictureBoxes[4] = pictureBox5;
-            pictureBoxes[5] = pictureBox6;
-            pictureBoxes[6] = pictureBox7;
-            pictureBoxes[7] = pictureBox8;
-            pictureBoxes[8] = pictureBox9;
-            pictureBoxes[9] = pictureBox10;
-            pictureBoxes[10] = pictureBox11;
-            pictureBoxes[11] = pictureBox12;
-            pictureBoxes[12] = pictureBox13;
-            pictureBoxes[13] = pictureBox14;
-            pictureBoxes[14] = pictureBox15;
-            pictureBoxes[15] = pictureBox16;
-            pictureBoxes[16] = pictureBox17;
-            pictureBoxes[17] = pictureBox18;
-            pictureBoxes[18] = pictureBox19;
-            pictureBoxes[19] = pictureBox20;
-            pictureBoxes[20] = pictureBox21;
-            pictureBoxes[21] = pictureBox22;
-            pictureBoxes[22] = pictureBox23;
-            pictureBoxes[23] = pictureBox24;
+            row = 6;
+            column = 4;
+            pictureBoxes = new PictureBox[row,column];
+            pictureBoxes[0,0] = pictureBox1;
+            pictureBoxes[0,1] = pictureBox2;
+            pictureBoxes[0,2] = pictureBox3;
+            pictureBoxes[0,3] = pictureBox4;
+            pictureBoxes[1,0] = pictureBox5;
+            pictureBoxes[1,1] = pictureBox6;
+            pictureBoxes[1,2] = pictureBox7;
+            pictureBoxes[1,3] = pictureBox8;
+            pictureBoxes[2,0] = pictureBox9;
+            pictureBoxes[2,1] = pictureBox10;
+            pictureBoxes[2,2] = pictureBox11;
+            pictureBoxes[2,3] = pictureBox12;
+            pictureBoxes[3,0] = pictureBox13;
+            pictureBoxes[3,1] = pictureBox14;
+            pictureBoxes[3,2] = pictureBox15;
+            pictureBoxes[3,3] = pictureBox16;
+            pictureBoxes[4,0] = pictureBox17;
+            pictureBoxes[4,1] = pictureBox18;
+            pictureBoxes[4,2] = pictureBox19;
+            pictureBoxes[4,3] = pictureBox20;
+            pictureBoxes[5,0] = pictureBox21;
+            pictureBoxes[5,1] = pictureBox22;
+            pictureBoxes[5,2] = pictureBox23;
+            pictureBoxes[5,3] = pictureBox24;
         }
 
         private void HideCards()
         {
-            pictureBox1.BackgroundImage = imageList1.Images[4];// изначально стоит обложка
-            pictureBox2.BackgroundImage = imageList1.Images[4];
-            pictureBox3.BackgroundImage = imageList1.Images[4];
-            pictureBox4.BackgroundImage = imageList1.Images[4];
-            pictureBox5.BackgroundImage = imageList1.Images[4];
-            pictureBox6.BackgroundImage = imageList1.Images[4];
-            pictureBox7.BackgroundImage = imageList1.Images[4];
-            pictureBox8.BackgroundImage = imageList1.Images[4];
-            pictureBox9.BackgroundImage = imageList1.Images[4];
-            pictureBox10.BackgroundImage = imageList1.Images[4];
-            pictureBox11.BackgroundImage = imageList1.Images[4];
-            pictureBox12.BackgroundImage = imageList1.Images[4];
-            pictureBox13.BackgroundImage = imageList1.Images[4];
-            pictureBox14.BackgroundImage = imageList1.Images[4];
-            pictureBox15.BackgroundImage = imageList1.Images[4];
-            pictureBox16.BackgroundImage = imageList1.Images[4];
-            pictureBox17.BackgroundImage = imageList1.Images[4];
-            pictureBox18.BackgroundImage = imageList1.Images[4];
-            pictureBox19.BackgroundImage = imageList1.Images[4];
-            pictureBox20.BackgroundImage = imageList1.Images[4];
-            pictureBox21.BackgroundImage = imageList1.Images[4];
-            pictureBox22.BackgroundImage = imageList1.Images[4];
-            pictureBox23.BackgroundImage = imageList1.Images[4];
-            pictureBox24.BackgroundImage = imageList1.Images[4];
+            for (var i = 0; i < pictureBoxes.GetLength(0); i++)
+                for (var j = 0; j  < pictureBoxes.GetLength(1); j ++)
+                    pictureBoxes[i,j].BackgroundImage = imageList1.Images[4];
         }
 
         private void Form3_Load(object sender, EventArgs e)
         {
             HideCards();
 
-            // first row ------------------------------------------------------------------
-            pictureBox1.Top = 0;
-            pictureBox1.Left = 0;
-            pictureBox1.Width = panel1.Width / 4;
-            pictureBox1.Height = panel1.Height / 6;
-
-            pictureBox2.Top = 0;
-            pictureBox2.Left = panel1.Width / 4;
-            pictureBox2.Width = panel1.Width / 4;
-            pictureBox2.Height = panel1.Height / 6;
-
-            pictureBox3.Top = 0;
-            pictureBox3.Left = panel1.Width * 2/ 4;
-            pictureBox3.Width = panel1.Width / 4;
-            pictureBox3.Height = panel1.Height / 6;
-
-            pictureBox4.Top = 0;
-            pictureBox4.Left = panel1.Width * 3 / 4;
-            pictureBox4.Width = panel1.Width / 4;
-            pictureBox4.Height = panel1.Height / 6;
-
-            // second row ------------------------------------------------------------------
-            pictureBox5.Top = panel1.Height / 6;
-            pictureBox5.Left = 0;
-            pictureBox5.Width = panel1.Width / 4;
-            pictureBox5.Height = panel1.Height / 6;
-
-            pictureBox6.Top = panel1.Height / 6;
-            pictureBox6.Left = panel1.Width / 4;
-            pictureBox6.Width = panel1.Width / 4;
-            pictureBox6.Height = panel1.Height / 6;
-
-            pictureBox7.Top = panel1.Height / 6; 
-            pictureBox7.Left = panel1.Width * 2 / 4;
-            pictureBox7.Width = panel1.Width / 4;
-            pictureBox7.Height = panel1.Height / 6;
-
-            pictureBox8.Top = panel1.Height / 6;
-            pictureBox8.Left = panel1.Width * 3 / 4;
-            pictureBox8.Width = panel1.Width / 4;
-            pictureBox8.Height = panel1.Height / 6;
-
-            // third row ------------------------------------------------------------------
-            pictureBox9.Top = panel1.Height * 2/ 6;
-            pictureBox9.Left = 0;
-            pictureBox9.Width = panel1.Width / 4;
-            pictureBox9.Height = panel1.Height / 6;
-
-            pictureBox10.Top = panel1.Height * 2 / 6;
-            pictureBox10.Left = panel1.Width / 4;
-            pictureBox10.Width = panel1.Width / 4;
-            pictureBox10.Height = panel1.Height / 6;
-
-            pictureBox11.Top = panel1.Height * 2 / 6;
-            pictureBox11.Left = panel1.Width * 2 / 4;
-            pictureBox11.Width = panel1.Width / 4;
-            pictureBox11.Height = panel1.Height / 6;
-
-            pictureBox12.Top = panel1.Height * 2 / 6;
-            pictureBox12.Left = panel1.Width * 3 / 4;
-            pictureBox12.Width = panel1.Width / 4;
-            pictureBox12.Height = panel1.Height / 6;
-
-            // fourth row ------------------------------------------------------------------
-            pictureBox13.Top = panel1.Height * 3 / 6;
-            pictureBox13.Left = 0;
-            pictureBox13.Width = panel1.Width / 4;
-            pictureBox13.Height = panel1.Height / 6;
-
-            pictureBox14.Top = panel1.Height * 3 / 6;
-            pictureBox14.Left = panel1.Width / 4;
-            pictureBox14.Width = panel1.Width / 4;
-            pictureBox14.Height = panel1.Height / 6;
-
-            pictureBox15.Top = panel1.Height * 3 / 6;
-            pictureBox15.Left = panel1.Width * 2 / 4;
-            pictureBox15.Width = panel1.Width / 4;
-            pictureBox15.Height = panel1.Height / 6;
-
-            pictureBox16.Top = panel1.Height * 3 / 6;
-            pictureBox16.Left = panel1.Width * 3 / 4;
-            pictureBox16.Width = panel1.Width / 4;
-            pictureBox16.Height = panel1.Height / 6;
-
-            // fifth row ------------------------------------------------------------------
-            pictureBox17.Top = panel1.Height * 4 / 6;
-            pictureBox17.Left = 0;
-            pictureBox17.Width = panel1.Width / 4;
-            pictureBox17.Height = panel1.Height / 6;
-
-            pictureBox18.Top = panel1.Height * 4 / 6;
-            pictureBox18.Left = panel1.Width / 4;
-            pictureBox18.Width = panel1.Width / 4;
-            pictureBox18.Height = panel1.Height / 6;
-
-            pictureBox19.Top = panel1.Height * 4 / 6;
-            pictureBox19.Left = panel1.Width * 2 / 4;
-            pictureBox19.Width = panel1.Width / 4;
-            pictureBox19.Height = panel1.Height / 6;
-
-            pictureBox20.Top = panel1.Height * 4 / 6;
-            pictureBox20.Left = panel1.Width * 3 / 4;
-            pictureBox20.Width = panel1.Width / 4;
-            pictureBox20.Height = panel1.Height / 6;
-
-            // sixth row ------------------------------------------------------------------
-            pictureBox21.Top = panel1.Height * 5 / 6;
-            pictureBox21.Left = 0;
-            pictureBox21.Width = panel1.Width / 4;
-            pictureBox21.Height = panel1.Height / 6;
-
-            pictureBox22.Top = panel1.Height * 5 / 6;
-            pictureBox22.Left = panel1.Width / 4;
-            pictureBox22.Width = panel1.Width / 4;
-            pictureBox22.Height = panel1.Height / 6;
-
-            pictureBox23.Top = panel1.Height * 5 / 6;
-            pictureBox23.Left = panel1.Width * 2 / 4;
-            pictureBox23.Width = panel1.Width / 4;
-            pictureBox23.Height = panel1.Height / 6;
-
-            pictureBox24.Top = panel1.Height * 5 / 6;
-            pictureBox24.Left = panel1.Width * 3 / 4;
-            pictureBox24.Width = panel1.Width / 4;
-            pictureBox24.Height = panel1.Height / 6;
+            for (var i = 0; i < pictureBoxes.GetLength(0); i++)
+                for (var j = 0; j < pictureBoxes.GetLength(1); j++)
+                {
+                    pictureBoxes[i,j].Top = panel1.Height * i / row;
+                    pictureBoxes[i, j].Left = panel1.Width * j / column;
+                    pictureBoxes[i,j].Width = panel1.Width / column;
+                    pictureBoxes[i,j].Height = panel1.Height / row;
+                }
 
             NewToolStripMenuItem_Click(null, null);
         }
@@ -221,11 +87,13 @@ namespace InstantMovement
             var usedPairs = 0;
 
             counterOpenedCards = 0;
-            for (var i = 0; i < 24; i++)
-            {
-                pictureBoxes[i].Visible = true;
+            for (var i = 0; i < pictureBoxes.GetLength(0); i++)
+                for (var j = 0; j < pictureBoxes.GetLength(1); j++)
+                    pictureBoxes[i,j].Visible = true;
+
+            for (int i = 0; i < pictureBoxes.Length; i++)
                 allCards[i] = -1;
-            }
+
             for (var i = 0; i < 12; i++)
                 pairs[i] = rnd.Next(4);// кол-во картинок в листе 
             while (usedPairs != 12)
@@ -258,10 +126,68 @@ namespace InstantMovement
             counterOpenedCards++;
             if (counterOpenedCards == 2 && allCards[opened[0]] == allCards[opened[1]])
             {
-                pictureBoxes[opened[0]].Visible = false;
-                pictureBoxes[opened[1]].Visible = false;
+                var valuesOpened = TransformNumber(opened[0]);
+                pictureBoxes[valuesOpened.Item1, valuesOpened.Item2].Visible = false;
+                valuesOpened = TransformNumber(opened[1]);
+                pictureBoxes[valuesOpened.Item1, valuesOpened.Item2].Visible = false;
             }
             pictureBox.BackgroundImage = imageList1.Images[allCards[index]];
+        }
+
+        private static (int,int) TransformNumber(int numberPictureBox)
+        {
+            switch (numberPictureBox)
+            {
+                case 0:
+                    return (0, 0);
+                case 1:
+                    return (0, 1);
+                case 2:
+                    return (0, 2);
+                case 3:
+                    return (0, 3);
+                case 4:
+                    return (1, 0);
+                case 5:
+                    return (1, 1);
+                case 6:
+                    return (1, 2);
+                case 7:
+                    return (1, 3);
+                case 8:
+                    return (2, 0);
+                case 9:
+                    return (2, 1);
+                case 10:
+                    return (2, 2);
+                case 11:
+                    return (2, 3);
+                case 12:
+                    return (3, 0);
+                case 13:
+                    return (3, 1);
+                case 14:
+                    return (3, 2);
+                case 15:
+                    return (3, 3);
+                case 16:
+                    return (4, 0);
+                case 17:
+                    return (4, 1);
+                case 18:
+                    return (4, 2);
+                case 19:
+                    return (4, 3);
+                case 20:
+                    return (5, 0);
+                case 21:
+                    return (5, 1);
+                case 22:
+                    return (5, 2);
+                case 23:
+                    return (5, 3);
+            }
+            return (-1, -1);
         }
 
         private void ExitToolStripMenuItem_Click(object sender, EventArgs e)

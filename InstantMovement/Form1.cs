@@ -35,5 +35,13 @@ namespace InstantMovement
             form.ShowDialog();
             Close();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Hide();
+            var form = new Form4();
+            form.ShowDialog();
+            Close();
+        }
     }
 }

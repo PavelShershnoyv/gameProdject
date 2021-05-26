@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="CenterButton.cs" />
     <Compile Include="Cards.cs" />
+    <Compile Include="GameObject.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -57,10 +58,32 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Target.png" />
+    <None Include="Resources\Center button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Start.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\target1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\target2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\target3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\target4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\target5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\target6.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

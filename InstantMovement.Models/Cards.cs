@@ -1,22 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 
 namespace InstantMovement.Models
 {
-    public class Cards
+    public class Cards : GameObject
     {
-        public int X { get; set; }
-        public int Y { get; set; }
-        public bool State { get; set; }
         public Bitmap ButtonImg { get; set; }
-        public Cards()
+        public Cards(int x, int y, bool state)
         {
-            State = false;
-            ButtonImg = new Bitmap(Properties.Resources.Target); // другая картинка будет 
+            X = x;
+            Y = y;
+            State = state;
+            Size = 110;
+            //ButtonImg = new Bitmap(Properties.Resources.Target); // другая картинка будет 
         }
     }
 }
