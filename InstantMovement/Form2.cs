@@ -51,7 +51,7 @@ namespace InstantMovement
                 ball.Size = rnd.Next(15, 40);
                 ball.X = rnd.Next(0, ClientSize.Width - ball.Size);
                 ball.Y = rnd.Next(0, ClientSize.Height - ball.Size);
-                Invalidate();
+                Invalidate();// таймер, чтобы перерисовывать
             }
 
             if (e.Button == MouseButtons.Left && e.X >= leftBorderBall.X
@@ -75,8 +75,7 @@ namespace InstantMovement
             if (score.Counter < 1 && center.State != false)
                 graphics.DrawImage(center.StartButtonImg, center.X, center.Y, center.Size, center.Size);
             else
-                graphics.DrawImage(center.ButtonImg, center.X, center.Y, center.Size, center.Size);
-            // Если реализовываю через SwitchButton то моргает экран 
+                graphics.DrawImage(center.ButtonImg, center.X, center.Y, center.Size, center.Size); 
 
             if (ball.State)
                 graphics.DrawImage(ball.NewColorTargetBall(), ball.X, ball.Y, ball.Size, ball.Size);

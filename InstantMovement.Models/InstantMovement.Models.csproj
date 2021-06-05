@@ -42,8 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cells.cs" />
     <Compile Include="CenterButton.cs" />
     <Compile Include="Cards.cs" />
+    <Compile Include="SinglyLinkedList.cs" />
     <Compile Include="GameObject.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -84,6 +86,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\target6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backSide.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

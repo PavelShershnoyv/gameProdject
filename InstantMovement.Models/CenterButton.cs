@@ -21,7 +21,7 @@ namespace InstantMovement.Models
             StartButtonImg = new Bitmap(Properties.Resources.Start);
             ButtonImg = new Bitmap(Properties.Resources.Center_button);
         }
-
+        // логика проверки должна быть тут 
         public Bitmap SwitchButton(Score score, CenterButton center)
         {
             if (score.Counter < 1 && center.State != false)

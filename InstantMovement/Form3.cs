@@ -32,30 +32,46 @@ namespace InstantMovement
             row = 6;
             column = 4;
             pictureBoxes = new PictureBox[row,column];
-            pictureBoxes[0,0] = pictureBox1;
-            pictureBoxes[0,1] = pictureBox2;
-            pictureBoxes[0,2] = pictureBox3;
-            pictureBoxes[0,3] = pictureBox4;
-            pictureBoxes[1,0] = pictureBox5;
-            pictureBoxes[1,1] = pictureBox6;
-            pictureBoxes[1,2] = pictureBox7;
-            pictureBoxes[1,3] = pictureBox8;
-            pictureBoxes[2,0] = pictureBox9;
-            pictureBoxes[2,1] = pictureBox10;
-            pictureBoxes[2,2] = pictureBox11;
-            pictureBoxes[2,3] = pictureBox12;
-            pictureBoxes[3,0] = pictureBox13;
-            pictureBoxes[3,1] = pictureBox14;
-            pictureBoxes[3,2] = pictureBox15;
-            pictureBoxes[3,3] = pictureBox16;
-            pictureBoxes[4,0] = pictureBox17;
-            pictureBoxes[4,1] = pictureBox18;
-            pictureBoxes[4,2] = pictureBox19;
-            pictureBoxes[4,3] = pictureBox20;
-            pictureBoxes[5,0] = pictureBox21;
-            pictureBoxes[5,1] = pictureBox22;
-            pictureBoxes[5,2] = pictureBox23;
-            pictureBoxes[5,3] = pictureBox24;
+
+            for (var i = 0; i < pictureBoxes.GetLength(0); i++)
+                for (var j = 0; j < pictureBoxes.GetLength(1); j++)
+                {
+                    pictureBoxes[i, j] = new PictureBox();
+                }
+
+            pictureBoxes[0, 0] = pictureBox1;
+            pictureBoxes[0, 1] = pictureBox2;
+            pictureBoxes[0, 2] = pictureBox3;
+            pictureBoxes[0, 3] = pictureBox4;
+            pictureBoxes[1, 0] = pictureBox5;
+            pictureBoxes[1, 1] = pictureBox6;
+            pictureBoxes[1, 2] = pictureBox7;
+            pictureBoxes[1, 3] = pictureBox8;
+            pictureBoxes[2, 0] = pictureBox9;
+            pictureBoxes[2, 1] = pictureBox10;
+            pictureBoxes[2, 2] = pictureBox11;
+            pictureBoxes[2, 3] = pictureBox12;// кодом создать все боксы
+            pictureBoxes[3, 0] = pictureBox13;
+            pictureBoxes[3, 1] = pictureBox14;
+            pictureBoxes[3, 2] = pictureBox15;
+            pictureBoxes[3, 3] = pictureBox16;
+            pictureBoxes[4, 0] = pictureBox17;
+            pictureBoxes[4, 1] = pictureBox18;
+            pictureBoxes[4, 2] = pictureBox19;
+            pictureBoxes[4, 3] = pictureBox20;
+            pictureBoxes[5, 0] = pictureBox21;
+            pictureBoxes[5, 1] = pictureBox22;
+            pictureBoxes[5, 2] = pictureBox23;
+            pictureBoxes[5, 3] = pictureBox24;
+
+            var numberTag = 0;
+
+            foreach (var item in pictureBoxes)
+            {
+                item.Tag = numberTag;
+                numberTag++;
+                item.Click += new EventHandler(PictureBox24_Click);
+            }
         }
 
         private void HideCards()
@@ -136,7 +152,7 @@ namespace InstantMovement
 
         private static (int,int) TransformNumber(int numberPictureBox)
         {
-            switch (numberPictureBox)
+            switch (numberPictureBox) // передавать кортеж в tаg 
             {
                 case 0:
                     return (0, 0);
