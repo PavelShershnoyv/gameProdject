@@ -13,18 +13,20 @@ namespace InstantMovement
 {
     public partial class Form3 : Form
     {
-        //private Cards cards;
         private readonly int[] pairs;
         private readonly int[] allCards;
         private readonly int[] opened;
         private int counterOpenedCards;
         private readonly PictureBox[,] pictureBoxes;
-        private readonly int row; // строка
-        private readonly int column; // столбец
+        private readonly int row;
+        private readonly int column;
+        private DateTime date;
+        private Timer timer;
 
         public Form3()
         {
             InitializeComponent();
+            this.Text = "Сопоставь карточки";
             pairs = new int[12];
             allCards = new int[24];
             counterOpenedCards = 0;
@@ -32,6 +34,7 @@ namespace InstantMovement
             row = 6;
             column = 4;
             pictureBoxes = new PictureBox[row,column];
+            timer = new Timer();
 
             for (var i = 0; i < pictureBoxes.GetLength(0); i++)
                 for (var j = 0; j < pictureBoxes.GetLength(1); j++)
@@ -50,7 +53,7 @@ namespace InstantMovement
             pictureBoxes[2, 0] = pictureBox9;
             pictureBoxes[2, 1] = pictureBox10;
             pictureBoxes[2, 2] = pictureBox11;
-            pictureBoxes[2, 3] = pictureBox12;// кодом создать все боксы
+            pictureBoxes[2, 3] = pictureBox12;
             pictureBoxes[3, 0] = pictureBox13;
             pictureBoxes[3, 1] = pictureBox14;
             pictureBoxes[3, 2] = pictureBox15;
@@ -101,6 +104,8 @@ namespace InstantMovement
         {
             var rnd = new Random();
             var usedPairs = 0;
+            label1.ForeColor = default;
+            label1.Text = "00:00:00:00";
 
             counterOpenedCards = 0;
             for (var i = 0; i < pictureBoxes.GetLength(0); i++)
@@ -111,7 +116,7 @@ namespace InstantMovement
                 allCards[i] = -1;
 
             for (var i = 0; i < 12; i++)
-                pairs[i] = rnd.Next(4);// кол-во картинок в листе 
+                pairs[i] = rnd.Next(4);
             while (usedPairs != 12)
             {
                 var firstNumber = rnd.Next(24);
@@ -152,7 +157,7 @@ namespace InstantMovement
 
         private static (int,int) TransformNumber(int numberPictureBox)
         {
-            switch (numberPictureBox) // передавать кортеж в tаg 
+            switch (numberPictureBox) 
             {
                 case 0:
                     return (0, 0);
@@ -212,6 +217,29 @@ namespace InstantMovement
             var form = new Form1();
             form.ShowDialog();
             Close();
+        }
+
+        private void startToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            date = DateTime.Now;
+            timer.Interval = 10;
+            timer.Tick += new EventHandler(TickTimer);
+            timer.Start();
+        }
+
+        private void TickTimer(object sender, EventArgs e)
+        {
+            var tick = DateTime.Now.Ticks - date.Ticks;
+            var stopWatch = new DateTime();
+
+            stopWatch = stopWatch.AddTicks(tick);
+            label1.Text = String.Format("{0:HH:mm:ss:ff}", stopWatch);
+        }
+
+        private void TurnOffTimerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            timer.Stop();
+            label1.ForeColor = Color.Red;
         }
     }
 }

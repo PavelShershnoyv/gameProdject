@@ -18,9 +18,10 @@ namespace InstantMovement
         public Form1()
         {
             InitializeComponent();
+            this.Text = "Меню";
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void ButtonDesignUI1_Click(object sender, EventArgs e)
         {
             Hide();
             var form = new Form2();
@@ -28,7 +29,7 @@ namespace InstantMovement
             Close();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void ButtonDesignUI2_Click(object sender, EventArgs e)
         {
             Hide();
             var form = new Form3();
@@ -36,7 +37,7 @@ namespace InstantMovement
             Close();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void ButtonDesignUI3_Click(object sender, EventArgs e)
         {
             Hide();
             var form = new Form4();

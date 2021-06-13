@@ -29,53 +29,53 @@ namespace InstantMovement
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buttonDesignUI1 = new InstantMovement.Models.ButtonDesignUI();
+            this.buttonDesignUI2 = new InstantMovement.Models.ButtonDesignUI();
+            this.buttonDesignUI3 = new InstantMovement.Models.ButtonDesignUI();
             this.SuspendLayout();
             // 
-            // button1
+            // buttonDesignUI1
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.Window;
-            this.button1.Location = new System.Drawing.Point(307, 133);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(153, 31);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Кликни на цель\r\n";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonDesignUI1.BackColor = System.Drawing.Color.Tomato;
+            this.buttonDesignUI1.ForeColor = System.Drawing.Color.White;
+            this.buttonDesignUI1.Location = new System.Drawing.Point(187, 76);
+            this.buttonDesignUI1.Name = "buttonDesignUI1";
+            this.buttonDesignUI1.Size = new System.Drawing.Size(150, 40);
+            this.buttonDesignUI1.TabIndex = 3;
+            this.buttonDesignUI1.Text = "Кликни на цель";
+            this.buttonDesignUI1.Click += new System.EventHandler(this.ButtonDesignUI1_Click);
             // 
-            // button2
+            // buttonDesignUI2
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.Info;
-            this.button2.Location = new System.Drawing.Point(307, 183);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(153, 36);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Сопоставь карточки";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.buttonDesignUI2.BackColor = System.Drawing.Color.Tomato;
+            this.buttonDesignUI2.ForeColor = System.Drawing.Color.White;
+            this.buttonDesignUI2.Location = new System.Drawing.Point(187, 135);
+            this.buttonDesignUI2.Name = "buttonDesignUI2";
+            this.buttonDesignUI2.Size = new System.Drawing.Size(150, 40);
+            this.buttonDesignUI2.TabIndex = 4;
+            this.buttonDesignUI2.Text = "Сопоставь карточки";
+            this.buttonDesignUI2.Click += new System.EventHandler(this.ButtonDesignUI2_Click);
             // 
-            // button3
+            // buttonDesignUI3
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.button3.Location = new System.Drawing.Point(307, 241);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(153, 34);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Сломай яблоко";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.buttonDesignUI3.BackColor = System.Drawing.Color.Tomato;
+            this.buttonDesignUI3.ForeColor = System.Drawing.Color.White;
+            this.buttonDesignUI3.Location = new System.Drawing.Point(187, 193);
+            this.buttonDesignUI3.Name = "buttonDesignUI3";
+            this.buttonDesignUI3.Size = new System.Drawing.Size(150, 40);
+            this.buttonDesignUI3.TabIndex = 5;
+            this.buttonDesignUI3.Text = "Сломай фрукт";
+            this.buttonDesignUI3.Click += new System.EventHandler(this.ButtonDesignUI3_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonDesignUI3);
+            this.Controls.Add(this.buttonDesignUI2);
+            this.Controls.Add(this.buttonDesignUI1);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -84,10 +84,9 @@ namespace InstantMovement
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private Models.ButtonDesignUI buttonDesignUI1;
+        private Models.ButtonDesignUI buttonDesignUI2;
+        private Models.ButtonDesignUI buttonDesignUI3;
     }
 }
 

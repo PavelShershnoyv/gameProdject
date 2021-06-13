@@ -13,11 +13,11 @@ namespace InstantMovement
 {
     public partial class Form4 : Form
     {
-        private static readonly int mapSize = 24;
+        private readonly int mapSize = 24;
         private static Cells cell;
-        private static PictureBox fruit;
-        private static (int, int)[,] map;
-        private static PictureBox[] snake;
+        private PictureBox fruit;
+        private (int, int)[,] map;
+        private PictureBox[] snake;
         private int r1, r2;
         private static new int Height;
         private static new int Width;
@@ -46,7 +46,7 @@ namespace InstantMovement
             CreateFruit();
             CreateSnake();
             timer.Tick += new EventHandler(Update);
-            timer.Interval = 150;
+            timer.Interval = 200;
             timer.Start();
         }
 
@@ -88,7 +88,6 @@ namespace InstantMovement
             fruit.Visible = false;
             CreateFruit();
             shortWay = FindPaths(snake[0].Location, fruit.Location).Reverse().Skip(1).ToList();
-            // вызвать путь 
         }
 
         private void CreateSnake()
@@ -111,32 +110,27 @@ namespace InstantMovement
 
         private void MoveSnake()
         {
-            //var direction = (0,0);
             if (snake[0].Location != fruit.Location)
-            {// позицию взял и удалил из списка 
-                //var dd = FindPaths(snake[0].Location, fruit.Location).Reverse().Skip(1).ToArray();
-                //direction = FindPaths(snake[0].Location, fruit.Location);
-                //shortWay = FindPaths(snake[0].Location, fruit.Location).Reverse().Skip(1).ToList();
+            {
                 for (var i = snake.Length - 1; i >= 1; i--)
                     snake[i].Location = snake[i - 1].Location;
                 snake[0].Location = shortWay.FirstOrDefault();
                 shortWay.Remove(shortWay.FirstOrDefault());
-                
             }
         }
 
         private void EatFruit()
         {
-            //if (snake[0].Location == fruit.Location)
-            //{
-            //    MessageBox.Show("Game over");
-            //}
+            if (snake[0].Location == fruit.Location)
+            {
+                timer.Stop();
+                MessageBox.Show("Game over");
+            }
         }
 
 
         private void CreateMap()
         {
-
             for (var i = 0; i < Width / cell.Size; i++)
             {
                 var line = new PictureBox
@@ -160,6 +154,14 @@ namespace InstantMovement
             }
         }
 
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            Hide();
+            var form = new Form1();
+            form.ShowDialog();
+            Close();
+        }
+
         public static SinglyLinkedList<Point> FindPaths(Point start, Point fruit)
         {
             var visited = new HashSet<Point>();
@@ -173,7 +175,7 @@ namespace InstantMovement
                 for (var dy = -1; dy <= 1; dy++)
                     for (var dx = -1; dx <= 1; dx++)
                     {
-                        if (dx != 0 && dy != 0) continue;// dx = 0; dy = 0
+                        if (dx != 0 && dy != 0) continue;
                         var nextPoint = new Point(point.Value.X + dx * cell.Size, point.Value.Y + dy * cell.Size);
 
                         if (visited.Contains(nextPoint)) continue;

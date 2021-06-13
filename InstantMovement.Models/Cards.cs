@@ -13,7 +13,7 @@ namespace InstantMovement.Models
             Y = y;
             State = state;
             Size = 110;
-            //ButtonImg = new Bitmap(Properties.Resources.Target); // другая картинка будет 
+            CardImg = new Bitmap(Properties.Resources.target1); 
         }
 
         public void HideCards()
