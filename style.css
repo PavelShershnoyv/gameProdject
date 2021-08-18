@@ -1,62 +1,137 @@
-* { 
-  box-sizing: border-box;/*позволяет правильно считать длину, ширину*/
+@font-face {
+  font-family: "Bebas Neue Cyrillic";
+  src: local("Bebas Neue Cyrillic"), local("BebasNeueCyrillic"),
+    url("./fonts/BebasNeueCyrillic.woff2") format("woff2"),
+    url("./fonts/BebasNeueCyrillic.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+* {
+  box-sizing: border-box; /*позволяет правильно считать длину, ширину*/
 }
 
-body{
-  font-family: 'Roboto', sans-serif;
+body {
+  font-family: "Roboto", sans-serif;
   margin: auto;
 }
 
-.header{
+.header {
   background-color: #635854;
-  padding-top: 12px;/*внутренний отступ*/
+  padding-top: 12px; /*внутренний отступ*/
   padding-bottom: 12px;
-  border-bottom: 4px solid #3596F5;/*толщина линии, вид линнии и цвет*/
+  border-bottom: 4px solid #3596f5; /*толщина линии, вид линнии и цвет*/
 }
 
-.navbar{
+.navbar {
   max-width: 1280px;
-  margin: auto;/*сделали по бокам равные расстояния*/
-  display: flex;/*сделали элементы в строчку*/
-  justify-content: space-between;/*сделали равные расстояния между элементами*/
-  align-items: center;/*сделали элемент по центру по вертикали*/
+  margin: auto; /*сделали по бокам равные расстояния*/
+  display: flex; /*сделали элементы в строчку*/
+  justify-content: space-between; /*сделали равные расстояния между элементами*/
+  align-items: center; /*сделали элемент по центру по вертикали*/
 }
 
-.navbar-menu{
+.navbar-menu {
   margin: 0; /* отключаем внешние отступы*/
   padding: 0; /* отключаем внутренние отступы*/
-  list-style: none;/*отключили точки у списка*/
+  list-style: none; /*отключили точки у списка*/
   display: flex;
-  text-align: center;/*элементы выравниваются по центру по горизонтали*/
-
+  text-align: center; /*элементы выравниваются по центру по горизонтали*/
 }
 
-.navbar-item{
-    margin-left: 40px;
-    margin-right: 40px;/*внешний отступ справа*/
+.navbar-item {
+  margin-left: 40px;
+  margin-right: 40px; /*внешний отступ справа*/
 }
 
-.navbar-link{
+.navbar-link {
   color: #fff;
-  text-decoration: none;/*выключаем подчеркивание ссылок*/
+  text-decoration: none; /*выключаем подчеркивание ссылок*/
 }
 
-.navbar-contacts{
-  text-align: right;/*выравнивание кокнтента по правому краю*/
+.navbar-contacts {
+  text-align: right; /*выравнивание кокнтента по правому краю*/
 }
 
-.navbar-text{
-    color: #fff;
-    font-size: 14px;
-    line-height: 16px;
-    display: block;/*занимает всю строчку (весь блок по длине)*/
-    margin-bottom: 4px;
+.navbar-text {
+  color: #fff;
+  font-size: 14px;
+  line-height: 16px;
+  display: block; /*занимает всю строчку (весь блок по длине)*/
+  margin-bottom: 4px;
 }
 
-.navbar-phone{
+.navbar-phone {
   text-decoration: none;
-  color: #fff;  
+  color: #fff;
   font-size: 17px;
   font-weight: bold;
   line-height: 20px;
+}
+
+.main {
+  max-width: 1280px;
+  margin: auto;
+  padding-top: 54px;
+  display: flex;
+}
+
+.main-info {
+  flex-grow: 1; /*Занимает все свободное место*/
+  text-align: center; /*все выравнивается по центру*/
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column; /*выстраивает элементы по вертикали*/
+  align-items: center; /*все элементы выстраиваются в центре*/
+}
+
+.home-image path {
+  opacity: 0; /*прозрачность (не видно = 0)*/
+  cursor: pointer; /*курсор меняется на пальчик*/
+}
+
+.home-image path:hover {
+  /*при наведении используется hover*/
+  opacity: 1;
+}
+
+.main-title {
+  margin: 0;
+  color: #635854;
+  font-family: "Bebas Neue Cyrillic", sans-serif;
+  font-weight: normal; /*регулируем жирность шрифта*/
+  font-size: 37px;
+  line-height: 37px; /*высота строки*/
+}
+
+.counter-group {
+  flex-direction: column; /*позволяет выстраиваться в столбик*/
+  display: flex;
+  align-items: center; /*выравнивание по центру*/
+}
+
+.counter-button {
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.counter-arrow-down {
+  transform: rotateX(180deg); /*развернули на 180 градусов*/
+}
+
+.counter {
+  color: #635854;
+  font-size: 124px;
+  font-family: "Bebas Neue Cyrillic", sans-serif;
+}
+
+.button-primary {
+  background-color: #3596f5;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  padding: 16px 36px;
+  cursor: pointer;
+  font-size: 16px;
 }
