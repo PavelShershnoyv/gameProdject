@@ -1,0 +1,62 @@
+* { 
+  box-sizing: border-box;/*позволяет правильно считать длину, ширину*/
+}
+
+body{
+  font-family: 'Roboto', sans-serif;
+  margin: auto;
+}
+
+.header{
+  background-color: #635854;
+  padding-top: 12px;/*внутренний отступ*/
+  padding-bottom: 12px;
+  border-bottom: 4px solid #3596F5;/*толщина линии, вид линнии и цвет*/
+}
+
+.navbar{
+  max-width: 1280px;
+  margin: auto;/*сделали по бокам равные расстояния*/
+  display: flex;/*сделали элементы в строчку*/
+  justify-content: space-between;/*сделали равные расстояния между элементами*/
+  align-items: center;/*сделали элемент по центру по вертикали*/
+}
+
+.navbar-menu{
+  margin: 0; /* отключаем внешние отступы*/
+  padding: 0; /* отключаем внутренние отступы*/
+  list-style: none;/*отключили точки у списка*/
+  display: flex;
+  text-align: center;/*элементы выравниваются по центру по горизонтали*/
+
+}
+
+.navbar-item{
+    margin-left: 40px;
+    margin-right: 40px;/*внешний отступ справа*/
+}
+
+.navbar-link{
+  color: #fff;
+  text-decoration: none;/*выключаем подчеркивание ссылок*/
+}
+
+.navbar-contacts{
+  text-align: right;/*выравнивание кокнтента по правому краю*/
+}
+
+.navbar-text{
+    color: #fff;
+    font-size: 14px;
+    line-height: 16px;
+    display: block;/*занимает всю строчку (весь блок по длине)*/
+    margin-bottom: 4px;
+}
+
+.navbar-phone{
+  text-decoration: none;
+  color: #fff;  
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 20px;
+}
